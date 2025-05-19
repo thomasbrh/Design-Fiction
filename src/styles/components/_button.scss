@@ -1,0 +1,7 @@
+.btn {
+    @include button-style(#026DC9, #fff, #fff, #026DC9);
+    padding: 1rem;
+    border-radius: 4rem;
+    font-family: $font-primary;
+    background-color: #026DC9;
+}
