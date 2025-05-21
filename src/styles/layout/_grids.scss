@@ -1,7 +1,7 @@
 /* grid */
 .grid {
     box-sizing: border-box;
-    padding: 2rem 2rem 0 2rem;
+    padding: 4rem 2rem 0 2rem;
     width: 100%;
     max-width: 100%;
     display: grid;
@@ -38,7 +38,9 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
+
 
 /* header grid */
 .header-grid {
@@ -49,7 +51,6 @@
     margin-bottom: 1rem;
     gap: 1rem;
 }
-
 .header-grid1 {
     grid-template-columns: 2fr 1fr;
 }
@@ -68,14 +69,19 @@
     width: 100%;
     max-width: 100%;
     display: grid;
-  }
-
+    margin-bottom: 2rem;
+}
 .tabler-grid1 {
     grid-template-columns: 50% 1fr;
+    gap: 1rem;
 }
 .tabler-grid2 {
-    grid-template-columns: 1fr 1fr 1fr;
-} 
+    grid-template-columns: 1fr 50%;
+    gap: 1rem;
+}
+.tabler-grid3 {
+    grid-template-columns: 1fr 1fr;
+}
 
 
 /* Sélecteurs pour margin */

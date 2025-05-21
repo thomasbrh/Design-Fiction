@@ -1,4 +1,4 @@
-
+/* slider */
 .slider-wrapper {
   position: relative;
   height: 45vh;
@@ -6,25 +6,34 @@
 }
 
 .slider {
+  display: flex;
+
+  .slide {
+    position: absolute;
+    pointer-events: none;
+    flex: 0 0 100%;
     display: flex;
-  
-    .slide {
-      position: absolute;
-      pointer-events: none;
-      flex: 0 0 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateX(100%);
-      border-radius: 1rem;
-      width: calc(100dvw - 5rem);
-      opacity: 0;
-      transition: transform 1s ease, opacity 1s ease;
-  
-      &.active {
-        pointer-events: auto;
-        transform: translateX(0);
-        opacity: 1;
-      }
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    border-radius: 1rem;
+    width: calc(100dvw - 5rem);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+
+    &.active {
+      pointer-events: auto;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
+}
+
+
+/* section background */
+.background {
+  z-index: -1000;
+  background-color: $color-white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}

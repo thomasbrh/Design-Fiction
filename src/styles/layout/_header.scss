@@ -3,6 +3,8 @@
     place-items: center;
 }
 
+
+/* background */
 .content {
     display: flex;
     flex-direction: column;
@@ -25,7 +27,7 @@
 }
 
 .blob-outer-container {
-    position: fixed;
+    /* position: fixed; */
     height: 100%;
     width: 100%;
     z-index: 0;

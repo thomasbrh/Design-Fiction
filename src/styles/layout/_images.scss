@@ -1,11 +1,49 @@
-.img-tabler{
+/* images */
+img {
     width: 100%;
+    height: auto;
+}
+
+
+/* img grid */
+.img-tabler, .img-header {
     display: grid;
     border-radius: 1rem;
 }
 
-.img-header {
-    width: 100%;
-    display: grid;
+
+/* img sections */
+.image-container {
+    position: relative;
+    display: block;
+}
+
+.img-interface, .img-esprit, .img-connected {
+    z-index: -100;
+    position: relative;
+}
+
+.img-esprit {
+    width: calc(100% + 4rem);
+    left: -2rem;
+    transform: scaleX(-1);
+    margin-bottom: 2rem;
+}
+
+.img-connected {
+    z-index: 100;
+    width: 50%;
+    left: 25%;
+    margin: 2rem 0;
+}
+
+.icon-connected {
+    width: 20%;
+}
+
+.icon-container {
+    width: 45%;
+    padding: 1rem;
+    background-color: #fff;
     border-radius: 1rem;
 }
