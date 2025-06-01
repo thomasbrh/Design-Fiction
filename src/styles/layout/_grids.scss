@@ -40,6 +40,14 @@
     gap: 1rem;
     margin-bottom: 2rem;
 }
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
 
 
 /* header grid */

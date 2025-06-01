@@ -5,15 +5,16 @@
 
 //import des styles de bases
 @import "base/base";
+@import "../../node_modules/modern-normalize/modern-normalize.css";
 @import "base/reset";
 
 // import des styles mises en page
+@import "layout/footer";
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/images";
+@import "layout/main";
 @import "layout/grids";
-@import "layout/sections";
-@import "layout/footer";
 
 // import des styles de composants
 @import "components/typography";

@@ -2,18 +2,40 @@
 /* responsive */
 @mixin responsive($breakpoint) {
 	@if $breakpoint == tablet {
-		@media (min-width: 768px) {@content;}
-	} 
-	
+		@media (min-width: 768px) {
+			@content;
+		}
+	}
+
+	@else if $breakpoint == tablet-landscape {
+		@media (min-width: 1024px) {
+			@content;
+		}
+	}
+
 	@else if $breakpoint == desktop {
-		@media (min-width: 1280px) {@content;}
+		@media (min-width: 1280px) {
+			@content;
+		}
 	}
 }
+
 // texte responsive
 @mixin font-size-responsive($mobile, $tablet, $desktop) {
     font-size: $mobile;
     @include responsive(tablet) { font-size: $tablet; }
     @include responsive(desktop) { font-size: $desktop; }
+}
+
+
+
+/* paragrpah */
+@mixin paragrpah ($color-paragrpah) {
+	font-family: $font-secondary;
+	color : $color-paragrpah;
+	line-height: 1.6;
+	max-width: 75ch;
+	margin-bottom: 1rem;
 }
 
 
@@ -28,11 +50,14 @@
     &:hover { background-color: $bg-hover; color: $hover; }
 }
 
-/* paragrpah */
-@mixin paragrpah ($color-paragrpah) {
-	font-family: $font-secondary;
-	color : $color-paragrpah;
-	line-height: 1.6;
-	max-width: 75ch;
-	margin-bottom: 1rem;
+
+/* grid */
+@mixin grid($padding, $gap) {
+	display: grid;
+	padding: $padding;
+	gap: $gap;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
 }
