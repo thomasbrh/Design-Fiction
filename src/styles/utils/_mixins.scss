@@ -1,4 +1,4 @@
-/* mixins */
+/* mixins */ // cette page vient de mon framework
 /* responsive */
 @mixin responsive($breakpoint) {
 	@if $breakpoint == tablet {
@@ -51,7 +51,7 @@
 }
 
 
-/* grid */
+/* grid */ // n'étais pas encore dans mon framework et fais moi même
 @mixin grid($padding, $grid-c-gap) {
 	display: grid;
 	padding: $padding;

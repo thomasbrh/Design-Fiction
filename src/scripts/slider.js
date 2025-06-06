@@ -13,7 +13,7 @@ setInterval(() => {
   slides[currentIndex].classList.add('active');
 }, 3000); // Toutes les 1000 ms = 1 seconde
 
-window.addEventListener('load', () => {
+window.addEventListener('load', () => { // cette partie a été créer par l'ia (bug de hauteur avec le slider)
     const anySlide = document.querySelector('.slide');
     const sliderWrapper = document.querySelector('.slider-wrapper');
   
