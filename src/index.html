@@ -26,10 +26,12 @@
 
     <body> 
         <!-- header -->
-        <header id="header" class="header grid">
-            <h1 class="title-header">iMemory</h1>
-            <h2 class="title-big">See it. Save it. Relive it.</h2>
-            <a href="#introduction" class="btn">En savoir plus</a>
+        <header id="header" class="header grid grid--header">
+            <div data-mb="2" class="flex-title">
+                <h1 class="title-header">iMemory</h1>
+                <h2 class="title-big">See it. Save it. Relive it.</h2>
+            </div>
+            <!-- <a href="#introduction" class="btn">En savoir plus</a> -->
 
             <!-- background -->
             <div style="z-index: -1000;">
@@ -44,10 +46,10 @@
 
 
             <!-- header grid d'images -->
-            <div>
+            <div class="mobile">
                 <div class="header-grid header-grid1">
                     <img class="img-header grid-start1 grid-end2" src="assets/images/header1.webp" alt="image header 1">
-                    <img class="img-header" src="assets/images/header2.webp" alt="Image header 2">
+                    <img class="img-header grid-end3" src="assets/images/header2.webp" alt="Image header 2">
                 </div>
 
                 <div class="header-grid header-grid2">
@@ -62,6 +64,27 @@
                 </div>
 
                 <div class="header-grid header-grid2">
+                    <img class="img-header" src="assets/images/header8.webp" alt="Image header 8">
+                    <img class="img-header" src="assets/images/header9.webp" alt="Image header 9">
+                </div>
+            </div>
+
+            <!-- header grid d'images desktop -->
+            <div class="desktop">
+                <div class="header-grid header-grid1">
+                    <img class="img-header" src="assets/images/header1.webp" alt="image header 1">
+                    <img class="img-header" src="assets/images/header2.webp" alt="Image header 2">
+                    <img class="img-header" src="assets/images/header3.webp" alt="Image header 3">
+                </div>
+
+                <div class="header-grid header-grid2">
+                    <img class="img-header" src="assets/images/header4.webp" alt="Image header 4">
+                    <img class="img-header" src="assets/images/header5.webp" alt="Image header 5">
+                    <img class="img-header" src="assets/images/header6.webp" alt="Image header 6">
+                    <img class="img-header" src="assets/images/header7.webp" alt="Image header 7">
+                </div>
+
+                <div class="header-grid header-grid3">
                     <img class="img-header" src="assets/images/header8.webp" alt="Image header 8">
                     <img class="img-header" src="assets/images/header9.webp" alt="Image header 9">
                 </div>
@@ -117,37 +140,81 @@
                     <img class="img-tabler" src="assets/images/tableau8.webp" alt="Image tableau 8" loading="lazy">
                 </div>
 
-                <div class="tabler-grid tabler-grid1">
+                <div class="tabler-grid tabler-grid3">
                     <img class="img-tabler" src="assets/images/tableau9.webp" alt="Image tableau 9" loading="lazy">
                     <img class="img-tabler" src="assets/images/tableau-big.webp" alt="Image tableau 10" loading="lazy">
                 </div>
             </div>
+            <!-- tableau large -->
+            <div class="tabler">
+                <div class="tabler-grid--large">
+                    <img class="img-tabler" src="assets/images/tableau1.webp" alt="Image tableau 1" loading="lazy">
+                    <img class="img-tabler" src="assets/images/tableau2.webp" alt="Image tableau 2" loading="lazy">
+                    <img class="img-tabler" src="assets/images/tableau3.webp" alt="Image tableau 3" loading="lazy">
 
-            <p class="paragraph"><b>Imaginez pouvoir revoir</b> les premiers pas de votre enfant, aussi nets que le jour où ils ont eu lieu<b>, de revivre la sensation unique</b> de contempler le monde depuis le sommet d'une montagne, de retrouver le sourire d’un être cher, intact malgré le passage du temps ou encore d'immortaliser un rêve et redonnez-lui vie, aussi intensément que dans votre mémoire.</p>
+                    <img class="img-tabler" src="assets/images/tableau4.webp" alt="Image tableau 4" loading="lazy">
+                    <img class="img-tabler" src="assets/images/tableau5.webp" alt="Image tableau 5" loading="lazy">
+                    <img class="img-tabler" src="assets/images/tableau6.webp" alt="Image tableau 6" loading="lazy">
 
-            <p class="paragraph">Avec iMemory, vos souvenirs ne sont plus flous, lointains ou éphémères. Ils deviennent <b>précis, accessibles, et surtout vivants.</b></p>
+                    <img class="img-tabler" src="assets/images/tableau7.webp" alt="Image tableau 7" loading="lazy">
+                    <img class="img-tabler" src="assets/images/tableau8.webp" alt="Image tableau 8" loading="lazy">
+                    <img class="img-tabler" src="assets/images/tableau9.webp" alt="Image tableau 9" loading="lazy">
+
+                    <img class="img-tabler img-tabler--big" src="assets/images/tableau-big.webp" alt="Image tableau 10" loading="lazy">
+                    <div class="grid-start2 grid-end4">
+                        <p class="paragraph" data-mt="0"><b>Imaginez pouvoir revoir</b> les premiers pas de votre enfant, aussi nets que le jour où ils ont eu lieu<b>, de revivre la sensation unique</b> de contempler le monde depuis le sommet d'une montagne, de retrouver le sourire d’un être cher, intact malgré le passage du temps ou encore d'immortaliser un rêve et redonnez-lui vie, aussi intensément que dans votre mémoire.</p>
+
+                        <p class="paragraph">Avec iMemory, vos souvenirs ne sont plus flous, lointains ou éphémères. Ils deviennent <b>précis, accessibles, et surtout vivants.</b></p>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
-        <!-- sections connected -->
+        <!-- sections connected desktop-->
         <section class="grid" id="connected">
             <h3 class="title-section">Vos souvenirs, au cœur de votre vie connectée.</h3>
 
-            <div class="grid-flex">
-                <div class="icon-container">
-                    <img src="assets/images/icon-icloud.svg" alt="icon iCloud">
-                    <p class="paragraph paragraph-icon paragraph--black">iCloud</p>
-                </div>
+            <div class="grid-flex desktop">
+                <div class="grid-flex">
+                    <div class="icon-container">
+                        <img class="icon" src="assets/images/icon-icloud.svg" alt="icon iCloud">
+                        <p class="paragraph paragraph-icon paragraph--black">iCloud</p>
+                    </div>
 
-                <div class="icon-container">
-                    <img src="assets/images/icon-airdrop.svg" alt="icon AirDrop">
-                    <p class="paragraph paragraph-icon paragraph--black">AirDrop</p>
+                    <div class="icon-container">
+                        <img class="icon" src="assets/images/icon-airdrop.svg" alt="icon AirDrop">
+                        <p class="paragraph paragraph-icon paragraph--black">AirDrop</p>
+                    </div>
+
+                    <div>
+                        <p class="paragraph">Grâce à sa <b>connectivité native avec vos appareils Apple,</b> iMemory vous permet de <b>tout synchroniser sans effort.</b> Un souvenir capturé peut être partagé par AirDrop, envoyé sur iCloud, ou même publié sur vos réseaux sociaux... <b>directement par la pensée.</b></p>
+
+                        <p data-mb="4" class="paragraph">Imaginez : vous revivez une fête, vous souriez, et en <b>une fraction de seconde, votre photo mentale est sur votre profil Instagram.</b></p>
+                    </div>
                 </div>
             </div>
 
-            <p class="paragraph">Grâce à sa <b>connectivité native avec vos appareils Apple,</b> iMemory vous permet de <b>tout synchroniser sans effort.</b> Un souvenir capturé peut être partagé par AirDrop, envoyé sur iCloud, ou même publié sur vos réseaux sociaux... <b>directement par la pensée.</b></p>
 
-            <p class="paragraph">Imaginez : vous revivez une fête, vous souriez, et en <b>une fraction de seconde, votre photo mentale est sur votre profil Instagram.</b></p>
+            <!-- sections connected mobile -->
+            <div class="mobile">
+                <div class="grid-flex">
+                    <div class="icon-container">
+                        <img class="icon" src="assets/images/icon-icloud.svg" alt="icon iCloud">
+                        <p class="paragraph paragraph-icon paragraph--black">iCloud</p>
+                    </div>
+
+                    <div class="icon-container">
+                        <img class="icon" src="assets/images/icon-airdrop.svg" alt="icon AirDrop">
+                        <p class="paragraph paragraph-icon paragraph--black">AirDrop</p>
+                    </div>
+                </div>
+            
+                <p class="paragraph">Grâce à sa <b>connectivité native avec vos appareils Apple,</b> iMemory vous permet de <b>tout synchroniser sans effort.</b> Un souvenir capturé peut être partagé par AirDrop, envoyé sur iCloud, ou même publié sur vos réseaux sociaux... <b>directement par la pensée.</b></p>
+
+                <p data-mb="4" class="paragraph">Imaginez : vous revivez une fête, vous souriez, et en <b>une fraction de seconde, votre photo mentale est sur votre profil Instagram.</b></p>
+            </div>
+           
         </section>
 
 
@@ -173,14 +240,14 @@
             <p class="paragraph paragraph--black">iMemory est pratiquement impénétrable mais le risque 0 n’existe pas. C’est pourquoi la puce s’arrête temporairement en cas de tentative d’attaque, ce qui rend l’utilisation et l’accès aux données de la puce impossible afin de préserver les données et la santé neuronale de l’utilisateur.
             </p>
 
-            <p class="paragraph paragraph--black">De plus, aucun enregistrement, aucune transmission, aucune lecture, aucune interaction n’est possible sans votre autorisation claire.</p>
+            <p class="paragraph paragraph--black" data-mb="4">De plus, aucun enregistrement, aucune transmission, aucune lecture, aucune interaction n’est possible sans votre autorisation claire.</p>
         </section>
 
 
         <!-- footer -->
-        <footer id="footer">
-            <a class="paragraph--footer" href="http://www.thomasbruch.be"><small>© Thomas Bruch 2025</small></a>
-            <p class="paragraph--footer">Ce projet est fictif et n’est pas affilié à Apple Inc.</p>
+        <footer id="footer" class="footer">
+            <a class="paragraph--footer" href="http://www.thomasbruch.be">© Thomas Bruch 2025</a>
+            <p class="paragraph--footer"><small>Ce projet est fictif et n’est pas affilié à Apple Inc.</small></p>
         </footer>
     </body>
 </html>

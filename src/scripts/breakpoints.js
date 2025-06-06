@@ -1,5 +1,5 @@
 /* Breakpoints pour les scripts */
-/* export const breakpoints = {
+export const breakpoints = {
     mobileMax: 767,             // max pour mobile
 
     tabletMin: 768,             // min pour tablette portrait
@@ -9,4 +9,4 @@
     tabletLandscapeMax: 1279,   // max pour tablette paysage
     
     desktopMin: 1280            // min pour desktop
-}; */
+};

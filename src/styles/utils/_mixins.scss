@@ -52,10 +52,10 @@
 
 
 /* grid */
-@mixin grid($padding, $gap) {
+@mixin grid($padding, $grid-c-gap) {
 	display: grid;
 	padding: $padding;
-	gap: $gap;
+	grid-column-gap: $grid-c-gap;
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 100%;

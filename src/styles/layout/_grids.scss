@@ -1,22 +1,21 @@
 /* grid */
 .grid {
-    box-sizing: border-box;
-    padding: 4rem 2rem 0 2rem;
-    width: 100%;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
+    @include grid(4rem 2rem 0 2rem, 0rem);
 
     @include responsive(tablet) {
-        padding: 0 0rem;
-        justify-content: center;
-        grid-column-gap: 0rem;
-        grid-template-columns: 1fr;
+        padding: 4rem 8rem 0 8rem;
     }
-    
-    @include responsive(desktop) {
-        padding: 0 0rem;
-        grid-template-columns: 1fr;
+
+    @include responsive(tablet-landscape) {
+        padding: 8rem 16rem 0 16rem;
+    }
+}
+
+.grid--header {
+    place-items: center;
+    @include responsive(tablet-landscape) {
+        padding: 4rem 8rem 0 8rem;
+        place-items: start;
     }
 }
 
@@ -36,9 +35,13 @@
 .grid-flex {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
     margin-bottom: 2rem;
+
+    @include responsive(tablet-landscape) {
+        justify-content: start;
+    }
 }
 .flex-start {
     display: flex;
@@ -47,6 +50,18 @@
 .flex-end {
     display: flex;
     justify-content: flex-end;
+}
+
+.flex-title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include responsive(tablet-landscape) {
+        flex-direction: row;
+        align-items: end;
+        gap: 2rem;
+    }
 }
 
 
@@ -58,16 +73,45 @@
     display: grid;
     margin-bottom: 1rem;
     gap: 1rem;
+
+    @include responsive(tablet) {
+        gap: 2rem;
+    }
+
+    @include responsive(tablet-landscape) {
+        
+    }
 }
 .header-grid1 {
     grid-template-columns: 2fr 1fr;
+
+    @include responsive(tablet-landscape) {
+        width: 90%;
+        grid-template-columns: 8fr 6fr 5fr;
+        place-items: end;
+    }
 }
 .header-grid2 {
     grid-template-columns: 2fr 1fr;
-    padding-left: 2rem;
+    padding-left: 4rem;
+
+    @include responsive(tablet-landscape) {
+        padding-left: 8rem;
+        width: 100%;
+        grid-template-columns: 12fr 9fr 9fr 9fr;
+        place-items: start;
+    }
 }
 .header-grid3 {
     grid-template-columns: 1fr 1fr 1fr;
+
+    @include responsive(tablet-landscape) {
+        width: 50%;
+        grid-template-columns: 7fr 9fr;
+        place-self: end;
+        top: -5rem;
+        position: relative;
+    }
 }
 
 
@@ -78,31 +122,45 @@
     max-width: 100%;
     display: grid;
     margin-bottom: 2rem;
+    gap: 1rem;
+
+    @include responsive(tablet-landscape) {
+        display: none;
+    }
 }
 .tabler-grid1 {
-    grid-template-columns: 50% 1fr;
-    gap: 1rem;
+    grid-template-columns: 70% 1fr;
+    place-items: end;
 }
 .tabler-grid2 {
-    grid-template-columns: 1fr 50%;
-    gap: 1rem;
+    grid-template-columns: 1fr 70%;
 }
 .tabler-grid3 {
     grid-template-columns: 1fr 1fr;
 }
 
-
-/* Sélecteurs pour margin */
-[data-m] { margin: attr(data-m rem); }
-[data-mt] { margin-top: attr(data-mt rem); }
-[data-mb] { margin-bottom: attr(data-mb rem); }
-[data-ml] { margin-left: attr(data-ml rem); }
-[data-mr] { margin-right: attr(data-mr rem); }
-[data-mx] {
-    margin-left: attr(data-mx rem);
-    margin-right: attr(data-mx rem);
+.tabler-grid--large {
+    display: none;
+    @include responsive(tablet-landscape) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
 }
-[data-my] {
-    margin-top: attr(data-my rem);
-    margin-bottom: attr(data-my rem);
+
+
+/* devices */
+.mobile {
+    display: block;
+
+    @include responsive(tablet-landscape) {
+        display: none;
+    }
+}
+.desktop {
+    display: none;
+
+    @include responsive(tablet-landscape) {
+        display: block;
+    }
 }

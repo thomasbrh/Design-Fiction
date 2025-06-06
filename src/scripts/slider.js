@@ -12,3 +12,13 @@ setInterval(() => {
   // Ajouter la classe active à la nouvelle slide
   slides[currentIndex].classList.add('active');
 }, 3000); // Toutes les 1000 ms = 1 seconde
+
+window.addEventListener('load', () => {
+    const anySlide = document.querySelector('.slide');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+  
+    if (anySlide && sliderWrapper) {
+      const height = anySlide.offsetHeight;
+      sliderWrapper.style.height = `${height}px`;
+    }
+  });

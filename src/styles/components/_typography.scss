@@ -11,11 +11,11 @@
 }
 
 .title-header { 
-    @include font-size-responsive(64px, 137px, 116px); 
-    margin-bottom: 1rem 
+    @include font-size-responsive(64px, 137px, 116px);
+    margin: 0;
 }
 
-.title-big { @include font-size-responsive(25px, 91px, 42px); }
+.title-big { @include font-size-responsive(25px, 66px, 42px); }
 
 .title-medium { @include font-size-responsive(54px, 61px, 71px); }
 
@@ -42,6 +42,17 @@
     top: 20%;
     left: 2rem;
     width: calc(100% - 4rem);
+    color: $color-white;
+
+    @include responsive(tablet) {
+        left: 8rem;
+        width: calc(100% - 16rem);
+    }
+
+    @include responsive(tablet-landscape) {
+        left: 16rem;
+        width: calc(100% - 32rem);
+    }
 }
 
 .paragraph-icon {
@@ -52,8 +63,9 @@
 }
 
 .paragraph--footer {
-    @include paragrpah ($color-white);
+    @include paragrpah ($color-black);
     @include font-size-responsive(11px, 13px, 15px);
+    max-width: 100%;
     font-weight: 400;
     text-decoration: none;
     display: flex;
@@ -62,4 +74,20 @@
 
 b {
     color: $color-white;
+}
+
+
+/* Sélecteurs pour margin */
+[data-m] { margin: attr(data-m rem); }
+[data-mt] { margin-top: attr(data-mt rem); }
+[data-mb] { margin-bottom: attr(data-mb rem); }
+[data-ml] { margin-left: attr(data-ml rem); }
+[data-mr] { margin-right: attr(data-mr rem); }
+[data-mx] {
+    margin-left: attr(data-mx rem);
+    margin-right: attr(data-mx rem);
+}
+[data-my] {
+    margin-top: attr(data-my rem);
+    margin-bottom: attr(data-my rem);
 }
