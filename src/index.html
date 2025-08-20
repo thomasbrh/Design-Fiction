@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <!-- L'IA a été utilisé pour le form et le changement de "Page" -->
+    <!-- L'IA a été utilisé pour le header -->
     <head>
-        <title>iMemory</title>
+        <title>iMemory - Puce neuronale Apple pour capturer vos souvenirs</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
+        <meta name="description" content="iMemory est la première puce neuronale signée Apple, capable de transformer vos pensées en souvenirs visuels interactifs. Capturez ce que vous voyez, revivez ce que vous aimez.">
+        <meta name="keywords" content="iMemory, Apple, puce neuronale, souvenirs, technologie, innovation, mémoire">
+        <meta name="author" content="Thomas Bruch">
         <!-- meta Partage -->
         <meta property="og:site_name" content="iMemory">
-        <meta property="og:title" content="iMemory">
-        <meta property="og:description" content="iMemory">
+        <meta property="og:title" content="iMemory - See it. Save it. Relive it.">
+        <meta property="og:description" content="La première puce neuronale Apple pour capturer et revivre vos souvenirs. Une révolution dans la technologie de la mémoire.">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="iMemory.thomasbruch.be">
-        <meta property="og:image" content="assets/images/Logo.svg">
-        <meta property="og:image:width" content="1800">
-        <meta property="og:image:height" content="945">
+        <meta property="og:url" content="https://iMemory.thomasbruch.be">
+        <meta property="og:image" content="assets/images/iM.svg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
         <!-- link -->
-        <link rel="icon" type="image/x-icon" href="assets/images/iM.svg">
+        <link rel="icon" type="image/svg+xml" href="assets/images/iM.svg">
+        <link rel="preload" href="styles/app.css" as="style">
         <link rel="stylesheet" href="styles/app.css">
+        <!-- Preload critical images -->
+        <link rel="preload" href="assets/images/header1.webp" as="image">
+        <link rel="preload" href="assets/images/Slider1.webp" as="image">
         <!-- script -->
-        <script type="module" src="scripts/app.js"></script>
+        <script type="module" src="scripts/app.js" defer></script>
         <!-- link Typos -->
     </head>
 
+            
     <body> 
         <!-- header -->
-        <header id="header" class="header grid grid--header">
+        <header id="header" class="header">
             <div data-mb="2" class="flex-title">
                 <h1 class="title-header">iMemory</h1>
                 <h2 class="title-big">See it. Save it. Relive it.</h2>
@@ -45,64 +52,44 @@
             </div>
 
 
-            <!-- header grid d'images -->
-            <div class="mobile">
-                <div class="header-grid header-grid1">
-                    <img class="img-header grid-start1 grid-end2" src="assets/images/header1.webp" alt="image header 1">
-                    <img class="img-header grid-end3" src="assets/images/header2.webp" alt="Image header 2">
-                </div>
-
-                <div class="header-grid header-grid2">
-                    <img class="img-header" src="assets/images/header3.webp" alt="Image header 3">
-                    <img class="img-header grid-start2 grid-end4" src="assets/images/header4.webp" alt="Image header 4">
-                </div>
-
-                <div class="header-grid header-grid3">
-                    <img class="img-header" src="assets/images/header5.webp" alt="Image header 5">
-                    <img class="img-header" src="assets/images/header6.webp" alt="Image header 6">
-                    <img class="img-header" src="assets/images/header7.webp" alt="Image header 7">
-                </div>
-
-                <div class="header-grid header-grid2">
-                    <img class="img-header" src="assets/images/header8.webp" alt="Image header 8">
-                    <img class="img-header" src="assets/images/header9.webp" alt="Image header 9">
-                </div>
-            </div>
-
-            <!-- header grid d'images desktop -->
-            <div class="desktop">
-                <div class="header-grid header-grid1">
-                    <img class="img-header" src="assets/images/header1.webp" alt="image header 1">
-                    <img class="img-header" src="assets/images/header2.webp" alt="Image header 2">
-                    <img class="img-header" src="assets/images/header3.webp" alt="Image header 3">
-                </div>
-
-                <div class="header-grid header-grid2">
-                    <img class="img-header" src="assets/images/header4.webp" alt="Image header 4">
-                    <img class="img-header" src="assets/images/header5.webp" alt="Image header 5">
-                    <img class="img-header" src="assets/images/header6.webp" alt="Image header 6">
-                    <img class="img-header" src="assets/images/header7.webp" alt="Image header 7">
-                </div>
-
-                <div class="header-grid header-grid3">
-                    <img class="img-header" src="assets/images/header8.webp" alt="Image header 8">
-                    <img class="img-header" src="assets/images/header9.webp" alt="Image header 9">
-                </div>
+            <!-- orbit images -->
+            <div class="orbit" aria-hidden="true">
+                <img class="orbit-item" src="assets/images/header1.webp" alt="Souvenir visuel iMemory - Moment capturé 1" loading="lazy">
+                <img class="orbit-item" src="assets/images/header2.webp" alt="Souvenir visuel iMemory - Moment capturé 2" loading="lazy">
+                <img class="orbit-item" src="assets/images/header3.webp" alt="Souvenir visuel iMemory - Moment capturé 3" loading="lazy">
+                <img class="orbit-item" src="assets/images/header4.webp" alt="Souvenir visuel iMemory - Moment capturé 4" loading="lazy">
+                <img class="orbit-item" src="assets/images/header5.webp" alt="Souvenir visuel iMemory - Moment capturé 5" loading="lazy">
+                <img class="orbit-item" src="assets/images/header6.webp" alt="Souvenir visuel iMemory - Moment capturé 6" loading="lazy">
+                <img class="orbit-item" src="assets/images/header7.webp" alt="Souvenir visuel iMemory - Moment capturé 7" loading="lazy">
+                <img class="orbit-item" src="assets/images/header8.webp" alt="Souvenir visuel iMemory - Moment capturé 8" loading="lazy">
+                <img class="orbit-item" src="assets/images/header9.webp" alt="Souvenir visuel iMemory - Moment capturé 9" loading="lazy">
+                <img class="orbit-item" src="assets/images/header1.webp" alt="Souvenir visuel iMemory - Moment capturé 10" loading="lazy">
+                <img class="orbit-item" src="assets/images/header2.webp" alt="Souvenir visuel iMemory - Moment capturé 11" loading="lazy">
+                <img class="orbit-item" src="assets/images/header3.webp" alt="Souvenir visuel iMemory - Moment capturé 12" loading="lazy">
+                <img class="orbit-item" src="assets/images/header4.webp" alt="Souvenir visuel iMemory - Moment capturé 13" loading="lazy">
+                <img class="orbit-item" src="assets/images/header5.webp" alt="Souvenir visuel iMemory - Moment capturé 14" loading="lazy">
+                <img class="orbit-item" src="assets/images/header6.webp" alt="Souvenir visuel iMemory - Moment capturé 15" loading="lazy">
+                <img class="orbit-item" src="assets/images/header7.webp" alt="Souvenir visuel iMemory - Moment capturé 16" loading="lazy">
+                <img class="orbit-item" src="assets/images/header8.webp" alt="Souvenir visuel iMemory - Moment capturé 17" loading="lazy">
+                <img class="orbit-item" src="assets/images/header9.webp" alt="Souvenir visuel iMemory - Moment capturé 18" loading="lazy">
             </div>
         </header>
 
 
         <!-- main -->
-         <!-- sections introduction-->
+        <!-- gradient -->
+        <div class="gradient"></div>
+        
+        <!-- sections introduction-->
         <section class="grid" id="introduction">
             <h3 class="title-section">Parce que certains instants méritent l’éternité.</h3>
 
             <div class="slider-wrapper">
                 <div class="slider">
-                    <img src="assets/images//Slider1.webp" class="slide active" alt="Image slider 1">
-                    <img src="assets/images/Slider2.webp" class="slide" alt="Image slider 2" loading="lazy">
-                    <img src="assets/images/Slider3.webp" class="slide" alt="Image slider 3" loading="lazy">
-                    <img src="assets/images/Slider4.webp" class="slide" alt="Image slider 4" loading="lazy">
+                    <img src="assets/images/Slider1.webp" class="slide active" alt="Démonstration iMemory - Capture de souvenirs en temps réel">
+                    <img src="assets/images/Slider2.webp" class="slide" alt="Interface iMemory - Visualisation des souvenirs capturés" loading="lazy">
+                    <img src="assets/images/Slider3.webp" class="slide" alt="Technologie iMemory - Puce neuronale en action" loading="lazy">
+                    <img src="assets/images/Slider4.webp" class="slide" alt="Expérience iMemory - Revivez vos moments précieux" loading="lazy">
                 </div>
             </div>
 
@@ -178,12 +165,12 @@
             <div class="grid-flex desktop">
                 <div class="grid-flex">
                     <div class="icon-container">
-                        <img class="icon" src="assets/images/icon-icloud.svg" alt="icon iCloud">
+                        <img class="icon" src="assets/images/icon-icloud.svg" alt="Icône iCloud - Synchronisation cloud">
                         <p class="paragraph paragraph-icon paragraph--black">iCloud</p>
                     </div>
 
                     <div class="icon-container">
-                        <img class="icon" src="assets/images/icon-airdrop.svg" alt="icon AirDrop">
+                        <img class="icon" src="assets/images/icon-airdrop.svg" alt="Icône AirDrop - Partage sans fil">
                         <p class="paragraph paragraph-icon paragraph--black">AirDrop</p>
                     </div>
 
@@ -200,12 +187,12 @@
             <div class="mobile">
                 <div class="grid-flex">
                     <div class="icon-container">
-                        <img class="icon" src="assets/images/icon-icloud.svg" alt="icon iCloud">
+                        <img class="icon" src="assets/images/icon-icloud.svg" alt="Icône iCloud - Synchronisation cloud">
                         <p class="paragraph paragraph-icon paragraph--black">iCloud</p>
                     </div>
 
                     <div class="icon-container">
-                        <img class="icon" src="assets/images/icon-airdrop.svg" alt="icon AirDrop">
+                        <img class="icon" src="assets/images/icon-airdrop.svg" alt="Icône AirDrop - Partage sans fil">
                         <p class="paragraph paragraph-icon paragraph--black">AirDrop</p>
                     </div>
                 </div>

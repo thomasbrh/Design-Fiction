@@ -1,17 +1,15 @@
 // import des styles utilitaires
 @import "utils/mixins";
-@import "utils/functions";
 @import "utils/variables";
 
 //import des styles de bases
 @import "base/base";
 @import "../../node_modules/modern-normalize/modern-normalize.css";
-@import "base/reset";
 
 // import des styles mises en page
 @import "layout/footer";
 @import "layout/header";
-@import "layout/navigation";
+@import "layout/slider";
 @import "layout/images";
 @import "layout/main";
 @import "layout/grids";
@@ -19,4 +17,3 @@
 // import des styles de composants
 @import "components/typography";
 @import "components/button";
-@import "components/decorations";

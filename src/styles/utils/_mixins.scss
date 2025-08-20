@@ -31,7 +31,7 @@
 
 /* paragrpah */
 @mixin paragrpah ($color-paragrpah) {
-	font-family: $font-secondary;
+	font-family: $font-primary;
 	color : $color-paragrpah;
 	line-height: 1.6;
 	max-width: 75ch;

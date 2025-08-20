@@ -1,13 +1,21 @@
-// le background vient d'une vidéo de youtube => crédits
+/* le background vient d'une vidéo de youtube => crédits */
 .header {
     display: grid;
+    min-height: 100dvh;
+    overflow: hidden;
     place-items: center;
     text-align: center;
+    position: relative;
 
     @include responsive(tablet-landscape) {
-        text-align: left;
-        place-items: start;
+        text-align: center;
+        place-items: center;
     }
+}
+
+.header .flex-title {
+    position: relative;
+    z-index: 3;
 }
 
 
@@ -19,42 +27,31 @@
     position: relative;
 }
 
-.content .quote {
-    color: white;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 64px;
-    padding: 10px;
-    background-color: #000;
-    border-radius: 10px;
-}
-
-.content .by {
-    color: #00e1ff;
-}
 
 .blob-outer-container {
-    /* position: fixed; */
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
     z-index: 0;
-    inset: 0;
-    margin: auto;
-    filter: blur(100px);
-    /*opacity: 0.5;*/
+    filter: blur(120px);
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 .blob-inner-container {
     border-radius: 99999px;
     position: absolute;
-    inset: 0;
-    margin: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
     width: 100vw;
     height: 100vh;
     min-width: 1000px;
     overflow: hidden;
     background-color: #fff;
-    transform: scale(0.8);
 }
 
 .blob {
@@ -75,4 +72,131 @@
     100% {
         transform: rotate(1turn) scale(2);
     }
+}
+
+/* orbit layout */
+@property --spin {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+
+@keyframes orbitSpin {
+    to { --spin: 360deg; }
+}
+
+
+/* démarre l'animation css */
+.orbit {
+    animation: orbitSpin 30s linear infinite;
+}
+
+
+.orbit {
+    --spin: 0deg;
+    position: absolute;
+
+    /* Position pour montrer le cercle complet sur mobile */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Taille adaptée pour mobile */
+    width: min(75vw, 350px);
+    height: min(75vw, 350px);   /* zone carrée pour un cercle parfait */
+    margin: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    @include responsive(tablet) {
+        top: 95%;
+        width: min(65vw, 400px);
+        height: min(65vw, 400px);
+    }
+
+    @include responsive(tablet-landscape) {
+        top: 105%;
+        width: min(55vw, 450px);
+        height: min(55vw, 450px);
+    }
+}
+
+
+.orbit-item {
+    /* circular thumbnails */
+    --r: clamp(120px, 25vw, 280px);    /* rayon ajusté pour mobile */
+    --s: clamp(32px, 6vw, 80px);       /* taille des vignettes ajustée pour mobile */
+    --scale: 1;
+    --rf: 1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: var(--s);
+    height: var(--s);
+    --offsetY: 0px;     /* cercle complet */
+    --self: 0deg;       /* rotation locale de la vignette */
+
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) + var(--spin))) translateX(calc(var(--r) * var(--rf))) rotate(calc(-1 * (var(--angle) + var(--spin)))) translateY(var(--offsetY)) rotate(var(--self)) scale(var(--scale));
+
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,.22);
+    transition: transform .35s ease;
+    will-change: transform;
+
+    @include responsive(tablet) {
+        --r: clamp(160px, 28vw, 320px);
+        --s: clamp(40px, 7vw, 90px);
+        box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+
+    @include responsive(tablet-landscape) {
+        --r: clamp(200px, 32vw, 380px);
+        --s: clamp(48px, 8vw, 110px);
+        box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    }
+}
+
+
+/* angles de secours pour fallback CSS */ /* Chaque item est espacé de 20° (360° / 18 = 20°) */
+.orbit-item:nth-child(1) { --angle: 0deg; }
+.orbit-item:nth-child(2) { --angle: 20deg; }
+.orbit-item:nth-child(3) { --angle: 40deg; }
+.orbit-item:nth-child(4) { --angle: 60deg; }
+.orbit-item:nth-child(5) { --angle: 80deg; }
+.orbit-item:nth-child(6) { --angle: 100deg; }
+.orbit-item:nth-child(7) { --angle: 120deg; }
+.orbit-item:nth-child(8) { --angle: 140deg; }
+.orbit-item:nth-child(9) { --angle: 160deg; }
+.orbit-item:nth-child(10) { --angle: 180deg; }
+.orbit-item:nth-child(11) { --angle: 200deg; }
+.orbit-item:nth-child(12) { --angle: 220deg; }
+.orbit-item:nth-child(13) { --angle: 240deg; }
+.orbit-item:nth-child(14) { --angle: 260deg; }
+.orbit-item:nth-child(15) { --angle: 280deg; }
+.orbit-item:nth-child(16) { --angle: 300deg; }
+.orbit-item:nth-child(17) { --angle: 320deg; }
+.orbit-item:nth-child(18) { --angle: 340deg; }
+
+.gradient {
+    position: relative;
+    background: #000;
+}
+
+.gradient::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, #000);
+    z-index: 1;
+}
+.gradient h2 {
+    position: relative;
+    z-index: 2;
 }
