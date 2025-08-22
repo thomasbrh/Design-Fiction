@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const AUTOPLAY_MS = 1500; /* temps pour changer de slide */
+    const AUTOPLAY_MS = 2000; /* temps pour changer de slide */
     const SWIPE_THRESHOLD = 50; // px
     const BREAKPOINTS = [
     { min: 1024, show: 3 },  // >= 1024px → 3 slides
