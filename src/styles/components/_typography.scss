@@ -8,11 +8,15 @@
     color: $color-white;
     font-family: $font-primary;
     line-height: 1.2;
+    margin: 0;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .title-header { 
-    @include font-size-responsive(64px, 137px, 116px);
-    margin: 0;
+    @include font-size-responsive(64px, 116px, 137px);
+    margin-bottom: 1rem;
 }
 
 .title-big { @include font-size-responsive(25px, 66px, 42px); }
@@ -20,7 +24,7 @@
 .title-medium { @include font-size-responsive(54px, 61px, 71px); }
 
 .title-section { @include font-size-responsive(23px, 41px, 69px); 
-    margin-bottom: 2rem; 
+    margin-bottom: 4rem; 
 }
 .title-section--black { color: $color-black; }
 

@@ -1,0 +1,162 @@
+/* orbit layout */
+@property --spin {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@keyframes orbitSpin {
+    to { --spin: 360deg; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .orbit-item:hover {
+        --scale: 1.15;
+        z-index: 5;
+    }
+}
+
+
+// animation css
+.orbit {
+    animation: orbitSpin 30s linear infinite;
+}
+
+.orbit {
+    --spin: 0deg;
+    position: absolute;
+
+    // Position pour montrer le cercle complet sur mobile
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    // Taille adaptée pour mobile
+    width: min(75vw, 350px);
+    height: min(75vw, 350px);   // zone carrée pour un cercle parfait
+    pointer-events: auto;
+    margin: 0; 
+    z-index: 1;
+
+    @include responsive(tablet) {
+        top: 95%;
+        width: min(65vw, 400px);
+        height: min(65vw, 400px);
+    }
+
+    @include responsive(tablet-landscape) {
+        top: 105%;
+        width: min(55vw, 450px);
+        height: min(55vw, 450px);
+    }
+}
+
+.orbit-item {
+    /* circular thumbnails */
+    --r: clamp(120px, 25vw, 280px);    // rayon ajusté pour mobile
+    --s: clamp(32px, 6vw, 80px);       // taille des vignettes ajustée pour mobile
+    --scale: 1;
+    --rf: 1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: var(--s);
+    height: var(--s);
+    --offsetY: 0px;     // cercle complet
+    --self: 0deg;       // rotation locale de la vignette 
+
+    transform: 
+    translate(-50%, -50%) 
+    rotate(calc(var(--angle) + var(--spin))) 
+    translateX(calc(var(--r) * var(--rf))) 
+    rotate(calc(-1 * (var(--angle) + var(--spin)))) 
+    translateY(var(--offsetY)) rotate(var(--self)) 
+    scale(var(--scale));
+
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,.22);
+    transition: transform .35s ease;
+    will-change: transform;
+
+    @include responsive(tablet) {
+        --r: clamp(160px, 28vw, 320px);
+        --s: clamp(40px, 7vw, 90px);
+        box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+
+    @include responsive(tablet-landscape) {
+        --r: clamp(200px, 32vw, 380px);
+        --s: clamp(48px, 8vw, 110px);
+        box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    }
+}
+
+// angles de secours pour fallback CSS | Chaque item est espacé de 20° (360° / 18 = 20°) 
+.orbit-item:nth-child(1) { --angle: 0deg; }
+.orbit-item:nth-child(2) { --angle: 20deg; }
+.orbit-item:nth-child(3) { --angle: 40deg; }
+.orbit-item:nth-child(4) { --angle: 60deg; }
+.orbit-item:nth-child(5) { --angle: 80deg; }
+.orbit-item:nth-child(6) { --angle: 100deg; }
+.orbit-item:nth-child(7) { --angle: 120deg; }
+.orbit-item:nth-child(8) { --angle: 140deg; }
+.orbit-item:nth-child(9) { --angle: 160deg; }
+.orbit-item:nth-child(10) { --angle: 180deg; }
+.orbit-item:nth-child(11) { --angle: 200deg; }
+.orbit-item:nth-child(12) { --angle: 220deg; }
+.orbit-item:nth-child(13) { --angle: 240deg; }
+.orbit-item:nth-child(14) { --angle: 260deg; }
+.orbit-item:nth-child(15) { --angle: 280deg; }
+.orbit-item:nth-child(16) { --angle: 300deg; }
+.orbit-item:nth-child(17) { --angle: 320deg; }
+.orbit-item:nth-child(18) { --angle: 340deg; }
+
+/* VERSION mobile */
+@media (max-width: 768px) {
+  .orbit-item {
+    width: clamp(64px, 12vmin, 120px);
+    height: clamp(64px, 12vmin, 120px);
+  }
+}
+
+/* VERSION tablette */
+@media (max-width: 1024px) {
+    // plus d'arc en mobile/tablette
+    .orbit,
+    .orbit::before,
+    .orbit::after {
+        -webkit-mask: none !important;
+        -webkit-mask-image: none !important;
+        mask: none !important;
+        mask-image: none !important;
+        clip-path: none !important;
+    }
+
+    // vignettes plus grandes
+    .orbit-item {
+        width: clamp(72px, 13vmin, 128px);
+        height: clamp(72px, 13vmin, 128px);
+    }
+
+    // seulement 9 images visibles 
+    .orbit-item:nth-child(n + 10) { display: none !important; }
+
+    // angles mobiles (9 × 40°)
+    .orbit-item:nth-child(1) { --angle: -90deg; }
+    .orbit-item:nth-child(2) { --angle: -50deg; }
+    .orbit-item:nth-child(3) { --angle: -10deg; }
+    .orbit-item:nth-child(4) { --angle:  30deg; }
+    .orbit-item:nth-child(5) { --angle:  70deg; }
+    .orbit-item:nth-child(6) { --angle: 110deg; }
+    .orbit-item:nth-child(7) { --angle: 150deg; }
+    .orbit-item:nth-child(8) { --angle: 190deg; }
+    .orbit-item:nth-child(9) { --angle: 230deg; }
+}
+
+// pause hover
+.orbit.pause {
+  animation-play-state: paused !important;
+}

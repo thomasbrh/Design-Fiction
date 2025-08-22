@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const AUTOPLAY_MS = 2000; /* temps pour changer de slide */
+    const AUTOPLAY_MS = 1500; /* temps pour changer de slide */
     const SWIPE_THRESHOLD = 50; // px
     const BREAKPOINTS = [
     { min: 1024, show: 3 },  // >= 1024px → 3 slides
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Pause au survol
+    // Pause au survol // cette partie à été faite par moi-même
     wrapper.addEventListener('mouseenter', stopAutoplay);
     wrapper.addEventListener('mouseleave', startAutoplay);
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
     }, { passive: true });
 
-    // Clavier
+    // Clavier // cette partie à été faite par moi-même
     wrapper.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') next();
     if (e.key === 'ArrowLeft')  prev();
@@ -166,4 +166,4 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
 });
 
-console.log('Slider loaded ✅');
+console.log('Slider loaded');

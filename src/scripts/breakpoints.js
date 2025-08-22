@@ -11,4 +11,4 @@ export const breakpoints = {
     desktopMin: 1280            // min pour desktop
 };
 
-console.log('Breakpoints loaded ✅');
+console.log('Breakpoints loaded');

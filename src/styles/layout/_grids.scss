@@ -1,4 +1,27 @@
 /* grid */
+* {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+.grid,
+.tabler,
+.tabler-grid,
+.grid-flex {
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
+
+  @include responsive(tablet) {
+    padding-inline: 1rem;
+  }
+}
+
+
 .grid {
     @include grid(4rem 2rem 0 2rem, 0rem);
 
@@ -24,11 +47,16 @@
 
 /* flexbox grid */
 .grid-flex {
+    @media (max-width: 250px) {
+        display:inline-grid;
+    }
+
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     gap: 2rem;
     margin-bottom: 2rem;
+    max-width: 100%;
 
     @include responsive(tablet-landscape) {
         justify-content: start;
@@ -52,6 +80,7 @@
     display: grid;
     margin-bottom: 2rem;
     gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
     @include responsive(tablet-landscape) {
         display: none;
@@ -70,6 +99,8 @@
 
 .tabler-grid--large {
     display: none;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
     @include responsive(tablet-landscape) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -80,7 +111,7 @@
 
 /* devices */
 .mobile {
-    display: block;
+    display: grid;
 
     @include responsive(tablet-landscape) {
         display: none;
