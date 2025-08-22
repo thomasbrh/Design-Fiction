@@ -24,7 +24,7 @@
 .title-medium { @include font-size-responsive(54px, 61px, 71px); }
 
 .title-section { @include font-size-responsive(23px, 41px, 69px); 
-    margin-bottom: 4rem; 
+    margin-bottom: 3rem; 
 }
 .title-section--black { color: $color-black; }
 

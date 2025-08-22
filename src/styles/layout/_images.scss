@@ -2,7 +2,6 @@
 img,
 video,
 iframe {
-    max-width: 100%;
     height: auto;
     max-width: 100%;
 }
@@ -12,12 +11,18 @@ iframe {
 .img-tabler {
     display: grid;
     border-radius: 1rem;
+    filter: grayscale(1);
+
+    &:hover {
+        transform: scale(1.05);
+        filter: grayscale(0);
+        transition: filter 0.2s ease;
+    }
 }
 
 .img-tabler--big {
     position: relative;
     width: calc(100% + 8rem);
-    /* left: -8rem; */
     height: auto;
 }
 
@@ -58,8 +63,49 @@ iframe {
 
 .icon-container {
     padding: 1rem;
-    background-color: #fff;
+    background-color: $color-white;
     border-radius: 1rem;
-
     align-self: center;
+}
+
+/* section esprit */
+.esprit-container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background-color: $color-text;
+    padding: 2rem;
+    border-radius: 2rem;
+
+    @include responsive(tablet) {
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        margin: 0 auto;
+    }
+
+    @include responsive(tablet-landscape) {
+        text-align: left;
+        padding: 4rem;
+
+    }
+}
+.esprit-container:last-child {
+    margin-bottom: 2rem;
+}
+
+.esprit-text {
+    flex: 1;
+}
+
+.esprit-image {
+    flex: 1;
+
+    img {
+        height: auto;
+        object-fit: contain;
+    }
 }

@@ -32,22 +32,22 @@
     transform: translate(-50%, -50%);
 
     // Taille adaptée pour mobile
-    width: min(75vw, 350px);
-    height: min(75vw, 350px);   // zone carrée pour un cercle parfait
+    width: min(70vw, 320px);
+    height: min(70vw, 320px);   // zone carrée pour un cercle parfait
     pointer-events: auto;
     margin: 0; 
     z-index: 1;
 
     @include responsive(tablet) {
         top: 95%;
-        width: min(65vw, 400px);
-        height: min(65vw, 400px);
+        width: min(60vw, 380px);
+        height: min(60vw, 380px);
     }
 
     @include responsive(tablet-landscape) {
-        top: 105%;
-        width: min(55vw, 450px);
-        height: min(55vw, 450px);
+        top: 110%;
+        width: min(50vw, 420px);
+        height: min(50vw, 420px);
     }
 }
 
